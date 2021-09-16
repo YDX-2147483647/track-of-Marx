@@ -1,0 +1,21 @@
+#map {
+    height: 80vh;
+}
+
+/* Popup */
+.leaflet-popup-content {
+    font-size: large;
+}
+
+.leaflet-popup-content h4,
+.leaflet-popup-content p {
+    margin: 0.2em 0;
+    text-align: center;
+}
+
+.leaflet-popup-content h4 {
+    font-family: sans-serif;
+}
+.leaflet-popup-content .what {
+    font-family: cursive;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马克思流亡地图</title>
+
+    <!-- Leaflet -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha256-yDc0eil8GjWFKqN1OSzHSVCiuGghTosZCcRje4tj7iQ=" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha256-BPfK9M5v34c2XP6p0cxVz1mUQLst0gTLk0mlc7kuodA=" crossorigin="anonymous">
+
+    <script src='./map.js' defer></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>马克思流亡地图</h1>
+    <p>
+        <button type="button" id='play-all'>播放全部</button>
+        <button type="button" id='prev'>上一个</button>
+        <button type="button" id='next'>下一个</button>
+        <button type="button" id='reset'>重置</button>
+    </p>
+    <section id='map'></section>
+    <p>马克思（Karl Heinrich Marx）的父亲是 Heinrich Marx，妻子是 Jenny von Westphalen。这里所有中文的“马克思”都指 Karl Marx。</p>
+    <p>时间、地点都没有考虑精确度，例如搬家发生在 1819 年，就直接算成当年元旦了。</p>
+    <p>数据基本来自<a href="https://en.wikipedia.org/wiki/Karl_Marx">Karl Marx - Wikipedia</a>的 Biography 一节，有很多地方意译了。</p>
+</body>
+
+</html>
