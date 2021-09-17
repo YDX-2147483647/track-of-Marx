@@ -17,23 +17,37 @@
     <link rel="stylesheet" href="./style.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/all.min.js" integrity="sha256-gSqw5G+Gss6YqyQlqyIkuQ0IRZUqGsDVq9c0tiF+mL8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
+        integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/all.min.js"
+        integrity="sha256-gSqw5G+Gss6YqyQlqyIkuQ0IRZUqGsDVq9c0tiF+mL8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <h1>马克思流亡地图<i class='fas fa-route'></i></h1>
 
-    <p id="controls">
-        <button type="button" id='play-all'><i class="far fa-play-circle"></i>自动播放</button>
-        <button type="button" id='prev' title="上一个"><i class="fas fa-caret-left"></i></button>
-        <button type="button" id='next' title="下一个"><i class="fas fa-caret-right"></i></button>
-        <button type="button" id='reset' title="重置"><i class="fas fa-undo"></i></button>
-    </p>
-    <section id='map'></section>
-    <p>马克思（Karl Heinrich Marx）的父亲是 Heinrich Marx，妻子是 Jenny von Westphalen。这里所有中文的“马克思”都指 Karl Marx。</p>
-    <p>时间、地点都没有考虑精确度，例如搬家发生在 1819 年，就直接算成当年元旦了。</p>
-    <p>数据基本来自<a href="https://en.wikipedia.org/wiki/Karl_Marx">Karl Marx - Wikipedia</a>的 Biography 一节，有很多地方意译了。</p>
+    <div id='map-etc'>
+        <section id='map'></section>
+        <div id='right-panel'>
+            <p id="controls">
+                <button type="button" id='play-all'><i class="far fa-play-circle"></i>自动播放</button>
+                <button type="button" id='prev' title="上一个"><i class="fas fa-caret-left"></i></button>
+                <button type="button" id='next' title="下一个"><i class="fas fa-caret-right"></i></button>
+                <button type="button" id='reset' title="重置"><i class="fas fa-undo"></i></button>
+            </p>
+            <section id='timeline'>
+                <ol>
+                    <li>啊</li>
+                </ol>
+            </section>
+        </div>
+    </div>
+
+    <section id='notes'>
+        <p>马克思（Karl Heinrich Marx）的父亲是 Heinrich Marx，妻子是 Jenny von Westphalen。这里所有中文的“马克思”都指 Karl Marx。</p>
+        <p>时间、地点都没有考虑精确度，例如搬家发生在 1819 年，就直接算成当年元旦了。</p>
+        <p>数据基本来自<a href="https://en.wikipedia.org/wiki/Karl_Marx">Karl Marx - Wikipedia</a>的 Biography 一节，有很多地方意译了。</p>
+    </section>
 </body>
 
 </html>

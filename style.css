@@ -5,12 +5,9 @@ p {
     text-indent: 2em;
 }
 
-/* Controls */
-#controls {
-    text-indent: 0;
-}
 
 /* Map */
+
 #map {
     height: 80vh;
 }
@@ -31,4 +28,10 @@ p {
 }
 .leaflet-popup-content .what {
     font-family: cursive;
+}
+
+/* Controls */
+
+#controls {
+    text-indent: 0;
 }
