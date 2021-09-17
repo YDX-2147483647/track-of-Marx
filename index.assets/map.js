@@ -382,7 +382,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoieS1kLXgtIiwiYSI6ImNrcnhtdTM1dDBzYTgycG50NHFmazRiOWgifQ.87PPVdI0Errn0chlRZIvCw'
 }).addTo(map);
 
-const center = { latLng: { lat: 50.422133, lng: 5.021404 }, zoom: 6 };
+const center = { latLng: { lat: 51, lng: 6 }, zoom: 6 };
 const track = data.filter(point => point.when.length > 0)
     .map(point => new Point(point));
 
