@@ -379,14 +379,11 @@ class Point {
     }
 
     /**
-     * 滚动到 hash 标签
-     * @param param0 hold_at_top: 保持整个页面仍在顶部
+     * 滚动到 id 为 hash 的元素
      */
-    scroll_to_hash({ hold_at_top = false } = {}) {
-        window.location.hash = this.to_hash();
-        if (hold_at_top) {
-            window.scrollTo({ top: 0 });
-        }
+    scroll_hash_into_view() {
+        const target = document.getElementById(this.to_hash());
+        target?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
 
@@ -409,7 +406,7 @@ async function travel(track, map, options) {
     const { delay = 2000, final } = options;
 
     for (const point of track) {
-        point.scroll_to_hash({ hold_at_top: true });
+        point.scroll_hash_into_view();
         await point.look_on(map);
         await sleep(delay);
     }
@@ -479,6 +476,7 @@ function interact({ map, marks, track, center }) {
         current_index--;
 
         set_all_buttons_disabled(true);
+        track[current_index].scroll_hash_into_view();
         await track[current_index].look_on(map);
         set_all_buttons_disabled(false);
 
@@ -490,6 +488,7 @@ function interact({ map, marks, track, center }) {
         current_index++;
 
         set_all_buttons_disabled(true);
+        track[current_index].scroll_hash_into_view();
         await track[current_index].look_on(map);
         set_all_buttons_disabled(false);
 
