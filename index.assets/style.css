@@ -34,7 +34,7 @@
     padding: 1em 1em 1em 0;
 }
 
-#timeline article{
+#timeline article {
     transition: all 0.5s;
 }
 #timeline article.looking {
@@ -69,18 +69,14 @@
     text-align: center;
 }
 
-/** Notes */
-
-#notes p {
-    text-indent: 2em;
-}
-
 /** Footer */
 
 footer {
     color: gray;
+}
+footer address {
     text-align: center;
 }
-footer a {
-    color: darkblue;
+footer p {
+    text-indent: 2em;
 }
