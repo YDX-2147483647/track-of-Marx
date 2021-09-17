@@ -285,11 +285,20 @@ class Point {
     }
 
     /**
-     * <time>元素
+     * `<time>`元素
      * @returns {string}
      */
     _to_time_element() {
         return `<time datetime=${this.when.toISOString()}>${this.when_text}</time>`;
+    }
+
+    /**
+     * 不与其它`Point`重复的 Hash
+     * @returns {string}
+     * @description 不含“#”。由时间生成，因此不能有重复的时间。
+     */
+    to_hash() {
+        return this.when.toISOString();
     }
 
     /**
@@ -303,11 +312,12 @@ class Point {
     }
 
     /**
-     * 详细内容，包裹在<article>中
+     * 详细内容，包裹在`<article>`中
+     * @param {{with_hash?: boolean}} param0  with_hash：是否设置 id 为 hash
      * @returns {string}
      */
-    to_article() {
-        let article = '<article>';
+    to_article({ with_hash = false } = {}) {
+        let article = with_hash ? `<article id='${this.to_hash()}'>` : '<article>';
         article += `<hgroup>
                         <p class='when'>${this._to_time_element()}</p>
                         <h4 class='where'>${this.where}</h4>
@@ -367,6 +377,17 @@ class Point {
             }
         });
     }
+
+    /**
+     * 滚动到 hash 标签
+     * @param param0 hold_at_top: 保持整个页面仍在顶部
+     */
+    scroll_to_hash({ hold_at_top = false } = {}) {
+        window.location.hash = this.to_hash();
+        if (hold_at_top) {
+            window.scrollTo({ top: 0 });
+        }
+    }
 }
 
 /**
@@ -388,6 +409,7 @@ async function travel(track, map, options) {
     const { delay = 2000, final } = options;
 
     for (const point of track) {
+        point.scroll_to_hash({ hold_at_top: true });
         await point.look_on(map);
         await sleep(delay);
     }
@@ -491,7 +513,7 @@ function interact({ map, marks, track, center }) {
 }
 interact({ map, marks, track, center });
 
-/// 添加时间轴内容
+/// 时间轴
 
 /**
  * 给时间轴添加内容
@@ -501,7 +523,7 @@ function append_content_to_timeline(track) {
     const timeline = document.querySelector('#timeline');
     for (const point of track) {
         const li = document.createElement('li');
-        li.innerHTML = point.to_article();
+        li.innerHTML = point.to_article({ with_hash: true });
         timeline.appendChild(li);
     }
 }
