@@ -383,7 +383,14 @@ class Point {
      */
     scroll_hash_into_view() {
         const target = document.getElementById(this.to_hash());
-        target?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (!target)
+            return;
+
+        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        target.classList.add('looking');
+        setTimeout(() => {
+            target.classList.remove('looking');
+        }, 1000);
     }
 }
 

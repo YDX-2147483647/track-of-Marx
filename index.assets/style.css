@@ -34,6 +34,13 @@
     padding: 1em 1em 1em 0;
 }
 
+#timeline article{
+    transition: all 0.5s;
+}
+#timeline article.looking {
+    background-color: lightgray;
+}
+
 /* hgroup */
 .leaflet-popup-content h4.where {
     font-family: sans-serif;
