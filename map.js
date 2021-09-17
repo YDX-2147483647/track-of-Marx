@@ -340,35 +340,31 @@ class Point {
 }
 
 /**
+ * @param {number} timeout 
+ */
+function sleep(timeout) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Wake up!"), timeout);
+    });
+}
+
+/**
  * 遍历
  * @param {Point[]} track 
  * @param {*} map L.map
- * @param {{delay?: number, final?: {latLng: {lat: number, lng: number}, zoom: number}, _index?: number}} options 每次停留 delay 毫秒；遍历结束后显示 final。
+ * @param {{delay?: number, final?: {latLng: {lat: number, lng: number}, zoom: number}}} options 每次停留 delay 毫秒；遍历结束后显示 final。
  */
-function travel(track, map, options) {
-    return new Promise(async (resolve, reject) => {
-        const { delay = 2000, _index = 0 } = options;
+async function travel(track, map, options) {
+    const { delay = 2000, final } = options;
 
-        await track[_index].look_on(map);
+    for (const point of track) {
+        await point.look_on(map);
+        await sleep(delay);
+    }
 
-        if (_index + 1 < track.length) {
-            options._index = _index + 1;
-            setTimeout(() => {
-                travel(track, map, options);
-            }, delay);
-        } else {
-            const { final } = options;
-            if (!final) {
-                resolve("All done.");
-                return;
-            }
-            
-            setTimeout(() => {
-                map.flyTo(final.latLng, final.zoom)
-                resolve('All done.');
-            }, delay);
-        }
-    });
+    if (final) {
+        await (new Point(final)).look_on(map);
+    }
 }
 
 
