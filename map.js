@@ -5,7 +5,7 @@ const data = [
         where: "Brückengasse 664 in Trier",
         latLng: '49°45′24″N 06°38′29″E',
         detail: "Trier 是个古城，后来成为普鲁士王国下莱茵省的一个市。",
-    },/*
+    },
     {
         when: '1819',
         what: '搬家',
@@ -164,7 +164,7 @@ const data = [
         latLng: '51.565652, -0.143725',
         zoom: 16,
         detail: '死于支气管炎、胸膜炎。17日葬于 Highgate 公墓。',
-    },*/
+    },
     {
         when: 'November 1954',
         what: '重新下葬',
