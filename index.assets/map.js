@@ -285,13 +285,43 @@ class Point {
     }
 
     /**
-     * 用于 popup 的 HTML
+     * <time>元素
+     * @returns {string}
+     */
+    _to_time_element() {
+        return `<time datetime=${this.when.toISOString()}>${this.when_text}</time>`;
+    }
+
+    /**
+     * 用于 popup 的简短 HTML
      * @returns {string}
      */
     toString() {
-        return `<p class='when'><time datetime=${this.when.toISOString()}>${this.when_text}</time></p>` +
+        return `<p class='when'>${this._to_time_element()}</p>` +
             `<h4 class='where'>${this.where}</h4>` +
             (this.what ? `<p class='what'>${this.what}</p>` : '');
+    }
+
+    /**
+     * 详细内容，包裹在<article>中
+     * @returns {string}
+     */
+    to_article() {
+        let article = '<article>';
+        article += `<hgroup>
+                        <p class='when'>${this._to_time_element()}</p>
+                        <h4 class='where'>${this.where}</h4>
+                    </hgroup>`;
+        if (this.what || this.detail) {
+            article += '<p>';
+            if (this.what)
+                article += `<span class='what'>${this.what}</span>`;
+            if (this.detail)
+                article += `<span class='detail'>${this.detail}</span>`;
+            article += '</p>';
+        }
+        article += `</article>`;
+        return article;
     }
 
     /**
@@ -369,7 +399,7 @@ async function travel(track, map, options) {
 
 
 
-/// 初始化
+/// 初始化地图
 
 const map = L.map('map').setView([0, 0], 10);
 
@@ -392,9 +422,12 @@ L.polyline(track.map(p => p.latLng), { color: 'red' }).addTo(map);
 map.setView(center.latLng, center.zoom);
 
 
+/// Controls
 
-/// 交互
-
+/**
+ * 给 #controls 添加交互功能
+ * @param {{map: *, marks: *, track: Point[], center: {latLng: {lat:number,lng:number}, zoom: number}}} param0 
+ */
 function interact({ map, marks, track, center }) {
     /** 正在展示的点
      * @type {number|null} */
@@ -457,3 +490,19 @@ function interact({ map, marks, track, center }) {
     });
 }
 interact({ map, marks, track, center });
+
+/// 添加时间轴内容
+
+/**
+ * 给时间轴添加内容
+ * @param {Point[]} track 
+ */
+function append_content_to_timeline(track) {
+    const timeline = document.querySelector('#timeline');
+    for (const point of track) {
+        const li = document.createElement('li');
+        li.innerHTML = point.to_article();
+        timeline.appendChild(li);
+    }
+}
+append_content_to_timeline(track);

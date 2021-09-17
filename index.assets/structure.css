@@ -9,15 +9,24 @@ body {
     grid-template-columns: 2fr 1fr;
     gap: 1em;
 }
-
-#map {
+#map-etc > * {
     height: 80vh;
+}
+
+#map-etc .right-panel #controls {
+    position: sticky;
+    top: 0;
+}
+#map-etc .right-panel {
+    overflow-y: scroll;
+    overflow-x: visible;
 }
 
 /** Draw Timeline */
 
 #timeline {
     border-left: solid #ffa500 0.15em;
+    margin-left: 0.6em;
 }
 /* list-style */
 #timeline li {
@@ -35,6 +44,12 @@ body {
     background-image: url("./dot-circle-regular-derive.svg");
     background-position: left center;
     vertical-align: middle;
+}
+/* list item grid-display */
+#timeline li {
+    display: grid;
+    grid-template-columns: min-content auto;
+    gap: 0.2em;
 }
 
 /** Footer  */
