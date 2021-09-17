@@ -1,16 +1,9 @@
-body {
-    padding: 0.5em 1em;
-}
 p {
     text-indent: 2em;
 }
 
 
-/* Map */
-
-#map {
-    height: 80vh;
-}
+/** Map */
 
 /* Popup */
 .leaflet-popup-content {
@@ -30,7 +23,8 @@ p {
     font-family: cursive;
 }
 
-/* Controls */
+
+/** Controls */
 
 #controls {
     text-indent: 0;
