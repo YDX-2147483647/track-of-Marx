@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   aria-hidden="true"
+   focusable="false"
+   data-prefix="far"
+   data-icon="dot-circle"
+   class="svg-inline--fa fa-dot-circle fa-w-16"
+   role="img"
+   viewBox="0 0 1024 512"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="dot-circle-regular-derive.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
+   width="1024"
+   height="512">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="0.80313516"
+     inkscape:cx="265.07293"
+     inkscape:cy="337.89561"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4"
+     inkscape:snap-global="false" />
+  <path
+     fill="currentColor"
+     d="m 256,56 c 110.532,0 200,89.451 200,200 0,110.532 -89.451,200 -200,200 C 145.468,456 56,366.549 56,256 56,145.468 145.451,56 256,56 M 256,8 C 119.033,8 8,119.033 8,256 8,392.967 119.033,504 256,504 392.967,504 504,392.967 504,256 504,119.033 392.967,8 256,8 Z m 0,168 c -44.183,0 -80,35.817 -80,80 0,44.183 35.817,80 80,80 44.183,0 80,-35.817 80,-80 0,-44.183 -35.817,-80 -80,-80 z"
+     id="path2"
+     style="fill:#ffa500;fill-opacity:1" />
+  <rect
+     style="fill:#ffa500;stroke:none;stroke-width:1.13966;fill-opacity:1"
+     id="rect12"
+     width="546.60791"
+     height="39.843853"
+     x="477.39215"
+     y="236.07808" />
+</svg>

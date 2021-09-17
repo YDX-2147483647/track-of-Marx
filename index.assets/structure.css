@@ -2,9 +2,43 @@ body {
     padding: 0.5em 1em;
 }
 
+/** Map, etc.  */
 
-/* Map */
+#map-etc {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1em;
+}
 
 #map {
     height: 80vh;
+}
+
+/** Draw Timeline */
+
+#timeline {
+    border-left: solid #ffa500 0.15em;
+}
+/* list-style */
+#timeline li {
+    list-style: none;
+}
+#timeline li::before {
+    margin-left: -0.58em;
+
+    content: "";
+    display: inline-block;
+    height: 1em;
+    width: 2em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("./dot-circle-regular-derive.svg");
+    background-position: left center;
+    vertical-align: middle;
+}
+
+/** Footer  */
+
+footer {
+    margin: 2em 0;
 }

@@ -2,7 +2,6 @@ p {
     text-indent: 2em;
 }
 
-
 /** Map */
 
 /* Popup */
@@ -14,6 +13,7 @@ p {
 .leaflet-popup-content p {
     margin: 0.2em 0;
     text-align: center;
+    text-indent: 0;
 }
 
 .leaflet-popup-content h4 {
@@ -23,9 +23,24 @@ p {
     font-family: cursive;
 }
 
-
 /** Controls */
 
 #controls {
     text-indent: 0;
+    text-align: center;
+}
+
+/** Timeline */
+
+#timeline {
+    padding: 1em 0;
+}
+
+/** Footer */
+
+footer {
+    color: gray;
+}
+footer a {
+    color: darkblue;
 }
