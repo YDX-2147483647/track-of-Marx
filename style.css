@@ -1,3 +1,16 @@
+body {
+    padding: 0.5em 1em;
+}
+p {
+    text-indent: 2em;
+}
+
+/* Controls */
+#controls {
+    text-indent: 0;
+}
+
+/* Map */
 #map {
     height: 80vh;
 }

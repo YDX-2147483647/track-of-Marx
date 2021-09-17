@@ -7,22 +7,28 @@
     <title>马克思流亡地图</title>
 
     <!-- Leaflet -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha256-yDc0eil8GjWFKqN1OSzHSVCiuGghTosZCcRje4tj7iQ=" crossorigin="anonymous" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha256-yDc0eil8GjWFKqN1OSzHSVCiuGghTosZCcRje4tj7iQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha256-BPfK9M5v34c2XP6p0cxVz1mUQLst0gTLk0mlc7kuodA=" crossorigin="anonymous">
 
+    <!-- type='module'会有跨域问题，只好将就了。 -->
     <script src='./map.js' defer></script>
     <link rel="stylesheet" href="./style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/all.min.js" integrity="sha256-gSqw5G+Gss6YqyQlqyIkuQ0IRZUqGsDVq9c0tiF+mL8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>马克思流亡地图</h1>
-    <p>
-        <button type="button" id='play-all'>播放全部</button>
-        <button type="button" id='prev'>上一个</button>
-        <button type="button" id='next'>下一个</button>
-        <button type="button" id='reset'>重置</button>
+    <h1>马克思流亡地图<i class='fas fa-route'></i></h1>
+
+    <p id="controls">
+        <button type="button" id='play-all'><i class="far fa-play-circle"></i>自动播放</button>
+        <button type="button" id='prev' title="上一个"><i class="fas fa-caret-left"></i></button>
+        <button type="button" id='next' title="下一个"><i class="fas fa-caret-right"></i></button>
+        <button type="button" id='reset' title="重置"><i class="fas fa-undo"></i></button>
     </p>
     <section id='map'></section>
     <p>马克思（Karl Heinrich Marx）的父亲是 Heinrich Marx，妻子是 Jenny von Westphalen。这里所有中文的“马克思”都指 Karl Marx。</p>
