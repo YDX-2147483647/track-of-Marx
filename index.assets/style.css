@@ -37,7 +37,8 @@
 #timeline article {
     transition: all 0.5s;
 }
-#timeline article.looking {
+#timeline article.looking,
+#timeline article:hover {
     background-color: #ffa50088;
 }
 

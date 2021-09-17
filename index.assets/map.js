@@ -524,14 +524,15 @@ interact({ map, marks, track, center });
 
 /**
  * 给时间轴添加内容
- * @param {Point[]} track 
+ * @param {{track: Point[], map: *}} param0 
  */
-function append_content_to_timeline(track) {
+function append_content_to_timeline({ track, map }) {
     const timeline = document.querySelector('#timeline');
     for (const point of track) {
         const li = document.createElement('li');
         li.innerHTML = point.to_article({ with_hash: true });
+        li.addEventListener('click', () => { point.look_on(map) });
         timeline.appendChild(li);
     }
 }
-append_content_to_timeline(track);
+append_content_to_timeline({ track, map });
