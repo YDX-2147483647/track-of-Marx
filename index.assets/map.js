@@ -295,10 +295,10 @@ class Point {
     /**
      * 不与其它`Point`重复的 Hash
      * @returns {string}
-     * @description 不含“#”。由时间生成，因此不能有重复的时间。
+     * @description 不含“#”。由时空坐标生成，因此不能有重复的时空坐标。
      */
     to_hash() {
-        return this.when.toISOString();
+        return `${this.when.toISOString()}-${this.where}F`;
     }
 
     /**
@@ -507,6 +507,7 @@ function interact({ map, marks, track, center }) {
         marker.on('click', () => {
             current_index = index;
             update_prev_next();
+            track[index].scroll_hash_into_view();
         });
     });
 }
